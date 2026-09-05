@@ -1,6 +1,16 @@
-.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); }
-.project-card { min-width: 0; padding: var(--space-md); border: 1px solid var(--color-border); background: var(--color-bg-secondary); }
+#projects { padding-block: var(--space-3xl); }
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2xl) var(--space-xl); }
+.project-card { min-width: 0; padding-top: var(--space-sm); border-top: 1px solid var(--color-border); transition: border-color var(--transition-normal); }
+.project-card:hover { border-color: var(--color-accent-bright); }
 .project-card > * + * { margin-top: var(--space-md); }
-.project-card__preview { min-height: 10rem; display: grid; place-items: center; padding: var(--space-md); background: var(--color-surface); }
-.project-card__preview { gap: var(--space-sm); text-align: center; border-top: 2px solid var(--color-accent); }
+.project-card > p:not(.section-label) { color: var(--color-text-muted); font-size: .9rem; }
+.project-card__preview { position: relative; isolation: isolate; min-height: 20rem; display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-xl); padding: var(--space-xl); background: var(--color-surface); overflow: hidden; }
+.project-card__preview::after { content: ''; position: absolute; width: 70%; aspect-ratio: 1; border: 1px solid var(--color-accent); border-radius: 50%; right: -20%; bottom: -30%; z-index: -1; }
+.project-card:nth-child(even) .project-card__preview { background: var(--color-bg-secondary); }
+.project-card__preview .body-large { font-family: var(--font-display); font-size: clamp(2rem, 3.8vw, 4rem); line-height: 1; text-transform: uppercase; max-width: 14ch; }
 .project-card__preview img { width: 100%; height: auto; }
+.project-card:first-child { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); column-gap: var(--space-xl); align-content: center; }
+.project-card:first-child .project-card__preview { grid-column: 1; grid-row: 1 / 7; min-height: 28rem; margin-top: 0; }
+.project-card:first-child > :not(.project-card__preview) { grid-column: 2; }
+.project-card .tag-list { font-size: .7rem; }
+.project-card > a { display: inline-block; font-size: .75rem; letter-spacing: .1em; font-weight: 700; text-transform: uppercase; }

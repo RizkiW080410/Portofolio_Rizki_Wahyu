@@ -48,7 +48,8 @@ export function renderProjects(container) {
     link.href = project.githubUrl
     link.target = '_blank'
     link.rel = 'noopener noreferrer'
-    link.textContent = 'View ' + project.title + ' on GitHub'
+    link.setAttribute('aria-label', 'View ' + project.title + ' on GitHub')
+    link.textContent = 'GitHub \u2197'
     card.append(link)
     const live = document.createElement(project.liveUrl ? 'a' : 'p')
     if (project.liveUrl) {

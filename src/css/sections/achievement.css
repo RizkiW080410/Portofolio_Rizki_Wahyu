@@ -1,2 +1,9 @@
-.achievement-block { border-left: 3px solid var(--color-accent); padding: var(--space-lg); background: var(--color-bg-secondary); }
-.achievement__placeholder { padding: var(--space-lg); border: 1px dashed var(--color-border); }
+#achievement { background: var(--color-bg-secondary); padding-block: var(--space-3xl); }
+#achievement .section-title { font-family: var(--font-body); font-size: .75rem; letter-spacing: .15em; color: var(--color-accent-bright); }
+.achievement-block { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-md) var(--space-xl); }
+.achievement-block > * { margin-top: 0; }
+.achievement-block h3 { grid-column: 1; font-family: var(--font-display); font-size: clamp(3.5rem, 7vw, 7rem); line-height: .95; text-transform: uppercase; max-width: 10ch; }
+.achievement-block > p { grid-column: 1; }
+.achievement__placeholder { grid-column: 2; grid-row: 1 / 5; align-self: stretch; min-height: 20rem; display: flex; flex-direction: column; justify-content: center; padding: var(--space-xl); border: 1px solid var(--color-border); background: var(--color-surface); }
+.achievement__placeholder strong { font-family: var(--font-display); font-size: clamp(4rem, 9vw, 9rem); line-height: 1; color: var(--color-text); }
+.achievement__placeholder span { font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; }
