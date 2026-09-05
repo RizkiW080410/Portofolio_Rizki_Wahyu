@@ -8,9 +8,33 @@
 .hero__identity { position: relative; z-index: 2; }
 .hero__identity > .text-muted { font-size: .9rem; max-width: 34ch; }
 .hero__identity > .body-large { font-size: .9rem; letter-spacing: .06em; text-transform: uppercase; }
-.hero__portrait { position: relative; z-index: 1; margin-top: calc(-1 * var(--space-xl)); padding: var(--space-sm); }
+.hero__portrait { position: relative; isolation: isolate; z-index: 1; margin-top: calc(-1 * var(--space-xl)); padding: var(--space-sm); }
 .hero__portrait::before { content: ''; position: absolute; z-index: -1; inset: 15% -8% 0; border-radius: 50%; background: var(--color-accent-dark); border: 1px solid var(--color-accent); }
-.hero__portrait img { width: 100%; height: auto; max-height: 65svh; aspect-ratio: 1023 / 1537; object-fit: contain; object-position: center top; border-radius: 45% 45% var(--radius-sm) var(--radius-sm); }
+.hero__portrait img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  max-height: 65svh;
+  aspect-ratio: 1023 / 1537;
+  object-fit: contain;
+  object-position: center top;
+  /* Preserve hair, face and shoulders; soften only the bottom of the cutout. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 84%, rgba(0, 0, 0, .95) 89%, rgba(0, 0, 0, .55) 95%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 84%, rgba(0, 0, 0, .95) 89%, rgba(0, 0, 0, .55) 95%, transparent 100%);
+  filter: drop-shadow(0 .25rem .35rem rgba(0, 0, 0, .18));
+}
+.hero__portrait::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  inset: auto 12% 0;
+  height: 10%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, .16), transparent 70%);
+  filter: blur(.3rem);
+}
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); padding-top: var(--space-sm); }
 .hero__actions a { padding: var(--space-sm) var(--space-md); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--color-border); transition: background var(--transition-fast), border-color var(--transition-fast); }
 .hero__actions a:first-child { background: var(--color-accent-dark); }

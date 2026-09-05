@@ -1,9 +1,13 @@
 #achievement { background: var(--color-bg-secondary); padding-block: var(--space-3xl); }
 #achievement .section-title { font-family: var(--font-body); font-size: .75rem; letter-spacing: .15em; color: var(--color-accent-bright); }
-.achievement-block { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-md) var(--space-xl); }
+.achievement-block { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); container-type: inline-size; gap: var(--space-md) var(--space-xl); }
 .achievement-block > * { margin-top: 0; }
-.achievement-block h3 { grid-column: 1; font-family: var(--font-display); font-size: clamp(3.5rem, 7vw, 7rem); line-height: .95; text-transform: uppercase; max-width: 10ch; }
+.achievement-block h3 { grid-column: 1; font-family: var(--font-display); font-size: clamp(2rem, 6.2vw, 5.5rem); font-size: clamp(2rem, 8cqi, 5.5rem); line-height: .95; text-transform: uppercase; max-width: 100%; overflow-wrap: normal; word-break: normal; letter-spacing: -.035em; }
 .achievement-block > p { grid-column: 1; }
-.achievement__placeholder { grid-column: 2; grid-row: 1 / 5; align-self: stretch; min-height: 20rem; display: flex; flex-direction: column; justify-content: center; padding: var(--space-xl); border: 1px solid var(--color-border); background: var(--color-surface); }
+.achievement__placeholder { grid-column: 2; grid-row: 1 / 5; align-self: stretch; min-height: 18rem; display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-md); padding: var(--space-xl); border: 1px solid var(--color-border); background: var(--color-surface); }
 .achievement__placeholder strong { font-family: var(--font-display); font-size: clamp(4rem, 9vw, 9rem); line-height: 1; color: var(--color-text); }
 .achievement__placeholder span { font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; }
+
+.achievement__placeholder strong { border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-sm); }
+.achievement__placeholder > p { border-top: 1px solid var(--color-border); padding-top: var(--space-md); font-size: .95rem; }
+.achievement-block > p:not(.section-label) { font-size: 1rem; line-height: 1.7; }

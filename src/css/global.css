@@ -2,5 +2,25 @@ body { background: var(--color-bg); color: var(--color-text); }
 section { padding-block: var(--space-2xl); border-bottom: 1px solid var(--color-border); scroll-margin-top: var(--space-lg); }
 :focus-visible { outline: 3px solid var(--color-text); outline-offset: 5px; }
 p { max-width: 68ch; }
-a,p,h1,h2,h3,li { overflow-wrap: anywhere; }
+a,p,li { overflow-wrap: anywhere; }
+h1,h2,h3 { overflow-wrap: normal; word-break: normal; white-space: normal; }
 ::selection { background: var(--color-accent-dark); color: var(--color-text); }
+
+/* Shared feedback without competing with entrance/parallax transforms. */
+:where(.hero__actions a, .contact-link, .project-card > a, .footer-links a, .nav-toggle, .project-media__controls button) {
+  transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
+}
+:where(.hero__actions a, .contact-link, .project-card > a, .footer-links a, .nav-toggle, .project-media__controls button):focus-visible {
+  outline: 3px solid var(--color-text); outline-offset: 5px;
+}
+:where(.hero__actions a, .contact-link, .project-card > a, .footer-links a, .nav-toggle, .project-media__controls button:not(:disabled)):active {
+  color: var(--color-accent-bright); border-color: var(--color-accent-bright);
+}
+@media (hover: hover) and (pointer: fine) {
+  :where(.contact-link, .project-card > a, .footer-links a, .nav-toggle, .project-media__controls button:not(:disabled)):hover { color: var(--color-accent-bright); }
+  .service-list li:hover { border-color: var(--color-accent-bright); }
+  .skills-list li:hover { color: var(--color-accent-bright); }
+}
+@media (prefers-reduced-motion: reduce) {
+  :where(.hero__actions a, .contact-link, .project-card > a, .footer-links a, .nav-toggle, .project-media__controls button) { transition: none; }
+}

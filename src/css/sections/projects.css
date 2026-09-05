@@ -3,7 +3,7 @@
 .project-card { min-width: 0; padding-top: var(--space-sm); border-top: 1px solid var(--color-border); transition: border-color var(--transition-normal); }
 .project-card:hover { border-color: var(--color-accent-bright); }
 .project-card > * + * { margin-top: var(--space-md); }
-.project-card > p:not(.section-label) { color: var(--color-text-muted); font-size: .9rem; }
+.project-card > p:not(.section-label) { color: var(--color-text-muted); font-size: 1rem; line-height: 1.7; }
 .project-card__preview { position: relative; isolation: isolate; min-height: 20rem; display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-xl); padding: var(--space-xl); background: var(--color-surface); overflow: hidden; }
 .project-card__preview::after { content: ''; position: absolute; width: 70%; aspect-ratio: 1; border: 1px solid var(--color-accent); border-radius: 50%; right: -20%; bottom: -30%; z-index: -1; }
 .project-card:nth-child(even) .project-card__preview { background: var(--color-bg-secondary); }
@@ -14,3 +14,16 @@
 .project-card:first-child > :not(.project-card__preview) { grid-column: 2; }
 .project-card .tag-list { font-size: .7rem; }
 .project-card > a { display: inline-block; font-size: .75rem; letter-spacing: .1em; font-weight: 700; text-transform: uppercase; }
+.project-card__preview.project-card__preview--media { display: block; padding: 0; min-height: 0; }
+.project-card__preview--media::after { display: none; }
+.project-media { width: 100%; min-width: 0; max-width: 100%; }
+.project-media:not(.swiper-initialized) .swiper-wrapper { display: block; }
+.project-media .swiper-slide { margin: 0; height: auto; min-width: 0; }
+.project-media .swiper-slide img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: var(--color-bg); }
+.project-media--portrait .swiper-slide img { aspect-ratio: 3 / 4; max-height: 32rem; }
+.project-media figcaption { padding: var(--space-sm); font-size: .8rem; color: var(--color-text-muted); }
+.project-media__controls { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); padding: var(--space-sm); }
+.project-media__controls[hidden] { display: none; }
+.project-media__controls button { min-height: 44px; padding: var(--space-xs) var(--space-sm); border: 1px solid var(--color-border); background: var(--color-bg-secondary); color: var(--color-text); cursor: pointer; }
+.project-media__controls button:disabled { color: var(--color-text-muted); cursor: default; }
+.project-media__pagination { margin-left: auto; width: auto; font-size: .8rem; color: var(--color-text); }

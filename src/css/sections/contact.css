@@ -1,4 +1,4 @@
 #contact { padding-block: var(--space-3xl); background: var(--color-bg-secondary); }
-#contact .section-title { font-size: clamp(3.5rem, 9vw, 9rem); max-width: 12ch; line-height: .95; }
+#contact .section-title { font-size: clamp(2.5rem, 8vw, 8rem); max-width: 100%; overflow-wrap: normal; word-break: normal; line-height: .95; }
 .contact-link { display: block; width: fit-content; padding-block: var(--space-xs); }
 .contact-link[href^="mailto:"] { font-size: clamp(1.2rem, 3vw, 2.75rem); color: var(--color-accent-bright); }

@@ -14,9 +14,9 @@ export const projects = [
     "featured": true,
     "githubUrl": "https://github.com/RizkiW080410/SaaS_multi-tenant.git",
     "liveUrl": "",
-    "image": "",
-    "gallery": [],
-    "number": "01"
+    "number": "01",
+    "media": [],
+    "mediaLayout": "landscape"
   },
   {
     "id": "supraindo",
@@ -32,9 +32,9 @@ export const projects = [
     "githubUrl": "https://github.com/RizkiW080410/src-pt_supraindo.git",
     "liveUrl": "",
     "featured": false,
-    "image": "",
-    "gallery": [],
-    "number": "02"
+    "number": "02",
+    "media": [],
+    "mediaLayout": "landscape"
   },
   {
     "id": "apotik-kelontong",
@@ -45,9 +45,9 @@ export const projects = [
     "githubUrl": "https://github.com/RizkiW080410/project_apotik_dan_toko_kelontong.git",
     "liveUrl": "",
     "featured": false,
-    "image": "",
-    "gallery": [],
-    "number": "03"
+    "number": "03",
+    "media": [],
+    "mediaLayout": "landscape"
   },
   {
     "id": "hr-management",
@@ -58,9 +58,9 @@ export const projects = [
     "githubUrl": "https://github.com/RizkiW080410/project_HR.git",
     "liveUrl": "",
     "featured": false,
-    "image": "",
-    "gallery": [],
-    "number": "04"
+    "number": "04",
+    "media": [],
+    "mediaLayout": "landscape"
   },
   {
     "id": "chemviro",
@@ -73,8 +73,8 @@ export const projects = [
     "githubUrl": "https://github.com/RizkiW080410/PROJECT_Pemrograman-Mobile_Rizki-Wahyu_20220801019.git",
     "liveUrl": "",
     "featured": false,
-    "image": "",
-    "gallery": [],
-    "number": "05"
+    "number": "05",
+    "media": [],
+    "mediaLayout": "portrait"
   }
 ]

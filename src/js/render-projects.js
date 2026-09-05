@@ -1,3 +1,4 @@
+import { createProjectMedia } from './project-media.js'
 import { projects } from '../data/projects.js'
 
 export function renderProjects(container) {
@@ -6,23 +7,7 @@ export function renderProjects(container) {
   for (const project of projects) {
     const card = document.createElement('article')
     card.className = 'project-card'
-    const preview = document.createElement('div')
-    preview.className = 'project-card__preview text-muted'
-    if (project.image) {
-      const image = document.createElement('img')
-      image.src = project.image
-      image.alt = project.title + ' screenshot'
-      image.loading = 'lazy'
-      preview.append(image)
-    } else {
-      const number = document.createElement('span')
-      number.className = 'section-label'
-      number.textContent = project.number + ' / ' + project.type
-      const label = document.createElement('p')
-      label.className = 'body-large'
-      label.textContent = project.title
-      preview.append(number, label)
-    }
+    const preview = createProjectMedia(project)
     const type = document.createElement('p')
     type.className = 'section-label'
     type.textContent = project.featured ? 'Primary project / ' + project.type : project.type

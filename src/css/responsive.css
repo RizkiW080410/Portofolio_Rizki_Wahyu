@@ -28,10 +28,11 @@
   .project-card:first-child .project-card__preview { min-height: 22rem; }
   .service-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .achievement-block { display: flex; flex-direction: column; }
+  .achievement-block h3 { font-size: clamp(2rem, 10cqi, 4rem); }
   .achievement__placeholder { min-height: 16rem; }
   #about > .container { display: block; }
   #about .container > * + * { margin-top: var(--space-md); }
-  .skills-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skill-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 30rem) {
   .nav-links { gap: var(--space-xs) var(--space-sm); }
@@ -41,7 +42,7 @@
   .experience-item { display: flex; flex-direction: column; }
   .project-card__preview { padding: var(--space-lg); }
   .hero__actions { flex-direction: column; align-items: stretch; text-align: center; }
-  .skills-list li { padding: var(--space-md) var(--space-xs); }
+  .skill-groups { grid-template-columns: minmax(0, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
   .nav-links a,.hero__actions a,.service-list li,.project-card { transition: none; }

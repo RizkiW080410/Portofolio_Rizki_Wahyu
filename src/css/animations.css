@@ -1,1 +1,9 @@
-/* Reserved for a later approved animation phase. No animations enabled. */
+﻿/* Content is visible by default. GSAP applies temporary states only at playback. */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto; }
+.hero__portrait::before { transform: translateY(var(--ellipse-shift, 0px)); }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .project-card__preview { transition: transform var(--transition-normal); }
+  .project-card:hover .project-card__preview:not(.project-card__preview--media) { transform: scale(1.015); }
+}
+
