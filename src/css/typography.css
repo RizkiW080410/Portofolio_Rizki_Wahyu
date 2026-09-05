@@ -1,0 +1,11 @@
+body { font-family: var(--font-body); line-height: 1.65; }
+h1,h2,h3 { line-height: 1.15; text-wrap: balance; }
+h1,h2 { font-family: var(--font-display); font-weight: 400; }
+h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
+.display-title { font-size: clamp(3rem, 8vw, 7rem); letter-spacing: -.04em; }
+.section-title { font-size: clamp(2rem, 5vw, 3.75rem); margin-bottom: var(--space-xl); }
+.section-label { font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--color-text-muted); }
+.body-large { font-size: clamp(1.1rem, 2vw, 1.4rem); }
+a { color: inherit; text-underline-offset: .25em; }
+a:hover { text-decoration-thickness: .15em; }
+button { color: inherit; font: inherit; }

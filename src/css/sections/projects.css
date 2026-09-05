@@ -1,0 +1,6 @@
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); }
+.project-card { min-width: 0; padding: var(--space-md); border: 1px solid var(--color-border); background: var(--color-bg-secondary); }
+.project-card > * + * { margin-top: var(--space-md); }
+.project-card__preview { min-height: 10rem; display: grid; place-items: center; padding: var(--space-md); background: var(--color-surface); }
+.project-card__preview { gap: var(--space-sm); text-align: center; border-top: 2px solid var(--color-accent); }
+.project-card__preview img { width: 100%; height: auto; }

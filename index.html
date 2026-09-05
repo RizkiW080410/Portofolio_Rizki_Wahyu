@@ -1,13 +1,88 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Rizki Wahyu, a Full-Stack and Mobile Developer focused on Laravel, Flutter, web applications, APIs, databases, and Docker-based development." />
+  <title>Rizki Wahyu — Full-Stack &amp; Mobile Developer</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav container" aria-label="Main navigation">
+      <a class="site-name" href="#home">RIZKI WAHYU</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li><li><a href="#projects">Work</a></li>
+        <li><a href="#experience">Experience</a></li><li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1">
+    <section id="home" aria-labelledby="home-title">
+      <div class="container hero-grid">
+        <div class="flow">
+          <p class="section-label">Portfolio / Full-Stack / Web / Mobile</p>
+          <h1 id="home-title" class="display-title">RIZKI<br />WAHYU</h1>
+          <p class="body-large">Full-Stack &amp; Mobile Developer</p>
+          <p class="text-muted">Fresh graduate in Informatics Engineering from Universitas Esa Unggul, focused on web and mobile application development with Laravel, Flutter, REST APIs, databases, and Docker.</p>
+          <div class="hero__actions"><a href="#projects">View My Work</a><a href="/documents/CV_Rizki_Wahyu.pdf" download>Download CV</a></div>
+        </div>
+        <div class="hero__portrait"><img src="/src/assets/images/profile/rizki-wahyu-profile.png" alt="Portrait of Rizki Wahyu" width="1023" height="1537" loading="eager" fetchpriority="high" /></div>
+      </div>
+    </section>
+    <section id="services" aria-labelledby="services-title"><div class="container">
+      <h2 id="services-title" class="section-title">What I Do</h2>
+      <ul class="service-list"><li class="flow"><p class="section-label">01</p><h3>Web Development</h3><p>Developing responsive web applications and full-stack systems with Laravel, PHP, JavaScript, HTML, and CSS.</p></li><li class="flow"><p class="section-label">02</p><h3>Mobile Development</h3><p>Developing mobile applications with Flutter and integrating application interfaces with backend services.</p></li><li class="flow"><p class="section-label">03</p><h3>Backend Development</h3><p>Building application logic, CRUD systems, REST APIs, authentication flows, and backend integrations.</p></li><li class="flow"><p class="section-label">04</p><h3>Database</h3><p>Working with relational databases such as MySQL and PostgreSQL for application data management.</p></li><li class="flow"><p class="section-label">05</p><h3>DevOps</h3><p>Working with Docker, Linux Ubuntu, Nginx, and application environment configuration.</p></li></ul>
+    </div></section>
+    <section id="projects" aria-labelledby="projects-title"><div class="container">
+      <h2 id="projects-title" class="section-title">Featured Work</h2>
+      <!-- Static fallback preserves project access without JavaScript. Keep aligned with projects.js. -->
+      <div class="project-grid" data-projects>
+<article class="project-card"><div class="project-card__preview"><span class="section-label">01 / Full-Stack Web Application</span><p class="body-large">SaaS Multi-Tenant Inventory &amp; POS</p></div><p class="section-label">Full-Stack Web Application</p><h3>SaaS Multi-Tenant Inventory &amp; POS</h3><p>A multi-tenant SaaS inventory and POS system designed for bakery SMEs. The system applies database-per-tenant architecture, batch-based inventory management, FEFO stock rotation, integrated POS functionality, and centralized multi-tenant monitoring.</p><a href="https://github.com/RizkiW080410/SaaS_multi-tenant.git" target="_blank" rel="noopener noreferrer">View SaaS Multi-Tenant Inventory &amp; POS on GitHub</a><p class="text-muted">Live Demo — Coming Soon</p></article>
+<article class="project-card"><div class="project-card__preview"><span class="section-label">02 / Company Profile / Full-Stack Web</span><p class="body-large">PT Supraindo Multi Sejahtera</p></div><p class="section-label">Company Profile / Full-Stack Web</p><h3>PT Supraindo Multi Sejahtera</h3><p>Company profile website developed through requirements analysis, interface design, database design, Laravel CRUD implementation, and frontend-backend integration.</p><a href="https://github.com/RizkiW080410/src-pt_supraindo.git" target="_blank" rel="noopener noreferrer">View PT Supraindo Multi Sejahtera on GitHub</a><p class="text-muted">Live Demo — Coming Soon</p></article>
+<article class="project-card"><div class="project-card__preview"><span class="section-label">03 / Web Application</span><p class="body-large">Apotik &amp; Toko Kelontong</p></div><p class="section-label">Web Application</p><h3>Apotik &amp; Toko Kelontong</h3><p>Web application project focused on pharmacy and general-store business operations.</p><a href="https://github.com/RizkiW080410/project_apotik_dan_toko_kelontong.git" target="_blank" rel="noopener noreferrer">View Apotik &amp; Toko Kelontong on GitHub</a><p class="text-muted">Live Demo — Coming Soon</p></article>
+<article class="project-card"><div class="project-card__preview"><span class="section-label">04 / Web Application</span><p class="body-large">HR Management System</p></div><p class="section-label">Web Application</p><h3>HR Management System</h3><p>Web-based Human Resources management project developed as part of application-development experience.</p><a href="https://github.com/RizkiW080410/project_HR.git" target="_blank" rel="noopener noreferrer">View HR Management System on GitHub</a><p class="text-muted">Live Demo — Coming Soon</p></article>
+<article class="project-card"><div class="project-card__preview"><span class="section-label">05 / Mobile Application</span><p class="body-large">Chemviro Mobile Application</p></div><p class="section-label">Mobile Application</p><h3>Chemviro Mobile Application</h3><p>Mobile application project developed using Flutter as part of mobile programming experience.</p><a href="https://github.com/RizkiW080410/PROJECT_Pemrograman-Mobile_Rizki-Wahyu_20220801019.git" target="_blank" rel="noopener noreferrer">View Chemviro Mobile Application on GitHub</a><p class="text-muted">Live Demo — Coming Soon</p></article>
+      </div>
+    </div></section>
+    <section id="experience" aria-labelledby="experience-title"><div class="container">
+      <h2 id="experience-title" class="section-title">Experience</h2>
+      <!-- Static fallback stays aligned with experiences.js. -->
+      <div data-experiences>
+<article class="experience-item"><p class="section-label">2025</p><h3>Laravel Developer Intern</h3><p class="body-large">PT Winnicode Garuda Teknologi</p><p>Completed a remote independent internship developing a web-based news portal using Laravel, MySQL/MariaDB, Tailwind CSS, Filament, Docker, and Nginx.</p><ul><li>CRUD development</li><li>Database design</li><li>Frontend-backend integration</li><li>Debugging</li><li>Application environment configuration</li></ul></article>
+<article class="experience-item"><p class="section-label">2024</p><h3>Full-Stack Web Developer</h3><p class="body-large">PT Supraindo Multi Sejahtera</p><p>Participated in development of the PT Supraindo Multi Sejahtera company profile website, covering requirements analysis, Figma interface design, MySQL database design, Laravel CRUD development, Docker-based development environment, and frontend-backend integration.</p><ul><li>Requirements analysis</li><li>Figma interface design</li><li>MySQL database design</li><li>Laravel CRUD implementation</li><li>Docker development environment</li><li>Frontend-backend integration</li></ul></article>
+      </div>
+    </div></section>
+    <section id="achievement" aria-labelledby="achievement-title"><div class="container">
+      <h2 id="achievement-title" class="section-title">International Achievement</h2>
+      <article class="achievement-block flow"><p class="section-label">International Achievement / Malaysia / 2025</p>
+        <h3>Best Societal Impact Proposal</h3><p>ICT Student International Competition</p>
+        <p class="text-muted">Universiti Malaysia Sabah (UMS)</p><div class="achievement__placeholder text-muted" data-asset-pending="ums-documentation">Competition documentation coming soon</div>
+      </article>
+    </div></section>
+    <section id="about" aria-labelledby="about-title"><div class="container flow">
+      <h2 id="about-title" class="section-title">About Me</h2>
+      <p class="body-large">I am Rizki Wahyu, a fresh Informatics Engineering graduate from Universitas Esa Unggul. My career focus is web, mobile, and backend development.</p>
+      <p class="text-muted">Project experience includes multi-tenant SaaS, inventory and POS systems, company-profile systems, HR systems, pharmacy and store systems, and mobile applications.</p>
+      <p>I work with Laravel, PHP, JavaScript, HTML, CSS, and Flutter, supported by MySQL, PostgreSQL, REST APIs, Docker, Linux, and Nginx.</p><p>My international experience includes the ICT Student International Competition at Universiti Malaysia Sabah, Malaysia, where I received the Best Societal Impact Proposal award in 2025.</p>
+      <div class="education flow"><h3>Education</h3><p><span lang="id">S1 Teknik Informatika</span> · Universitas Esa Unggul</p><p class="text-muted">2022–2026 · GPA / IPK: 3.83</p></div>
+    </div></section>
+    <section id="stack" aria-labelledby="stack-title"><div class="container">
+      <h2 id="stack-title" class="section-title">Tech Stack</h2>
+      <ul class="tag-list skills-list"><li>Laravel</li><li>PHP</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>Flutter</li><li>MySQL</li><li>PostgreSQL</li><li>REST API</li><li>Docker</li><li>Linux</li><li>Nginx</li><li>Git</li></ul>
+    </div></section>
+    <section id="certificates" aria-labelledby="certificates-title"><div class="container">
+      <h2 id="certificates-title" class="section-title">Certificates</h2>
+      <p class="certificate-placeholder">Certificates will be shared here soon.</p>
+    </div></section>
+    <section id="contact" aria-labelledby="contact-title"><div class="container flow">
+      <h2 id="contact-title" class="section-title">Contact</h2>
+      <p>Let’s connect about web, mobile, and backend development.</p><p>Tangerang, Banten, Indonesia</p><a class="contact-link" href="mailto:rw43917@gmail.com">rw43917@gmail.com</a>
+      <a class="contact-link" href="https://github.com/RizkiW080410" target="_blank" rel="noopener noreferrer">Visit Rizki Wahyu on GitHub</a>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="container">Rizki Wahyu · Full-Stack &amp; Mobile Developer</div></footer>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
 </html>

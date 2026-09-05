@@ -1,0 +1,2 @@
+.achievement-block { border-left: 3px solid var(--color-accent); padding: var(--space-lg); background: var(--color-bg-secondary); }
+.achievement__placeholder { padding: var(--space-lg); border: 1px dashed var(--color-border); }

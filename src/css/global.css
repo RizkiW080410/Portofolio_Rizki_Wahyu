@@ -1,0 +1,6 @@
+body { background: var(--color-bg); color: var(--color-text); }
+section { padding-block: var(--space-2xl); border-bottom: 1px solid var(--color-border); scroll-margin-top: var(--space-lg); }
+:focus-visible { outline: 3px solid var(--color-text); outline-offset: 5px; }
+p { max-width: 68ch; }
+a,p,h1,h2,h3,li { overflow-wrap: anywhere; }
+::selection { background: var(--color-accent-dark); color: var(--color-text); }
