@@ -2,9 +2,11 @@ import '../style.css'
 import { renderProjects } from './render-projects.js'
 import { renderExperience } from './render-experience.js'
 import { initNavigation } from './navigation.js'
+import { renderCredentials } from './render-credentials.js'
 
 renderProjects(document.querySelector('[data-projects]'))
 renderExperience(document.querySelector('[data-experiences]'))
+renderCredentials()
 const cleanupNavigation = initNavigation()
 
 const year = document.querySelector('[data-year]')

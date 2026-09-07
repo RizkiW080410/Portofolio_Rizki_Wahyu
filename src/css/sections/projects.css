@@ -7,7 +7,7 @@
 .project-card__preview { position: relative; isolation: isolate; min-height: 20rem; display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-xl); padding: var(--space-xl); background: var(--color-surface); overflow: hidden; }
 .project-card__preview::after { content: ''; position: absolute; width: 70%; aspect-ratio: 1; border: 1px solid var(--color-accent); border-radius: 50%; right: -20%; bottom: -30%; z-index: -1; }
 .project-card:nth-child(even) .project-card__preview { background: var(--color-bg-secondary); }
-.project-card__preview .body-large { font-family: var(--font-display); font-size: clamp(2rem, 3.8vw, 4rem); line-height: 1; text-transform: uppercase; max-width: 14ch; }
+.project-card__preview .body-large { font-family: var(--font-display); font-size: clamp(2rem, 3.8vw, 4rem); line-height: 1; text-transform: uppercase; max-width: 14ch; overflow-wrap: normal; word-break: normal; }
 .project-card__preview img { width: 100%; height: auto; }
 .project-card:first-child { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); column-gap: var(--space-xl); align-content: center; }
 .project-card:first-child .project-card__preview { grid-column: 1; grid-row: 1 / 7; min-height: 28rem; margin-top: 0; }
@@ -15,14 +15,15 @@
 .project-card .tag-list { font-size: .7rem; }
 .project-card > a { display: inline-block; font-size: .75rem; letter-spacing: .1em; font-weight: 700; text-transform: uppercase; }
 .project-card__preview.project-card__preview--media { display: block; padding: 0; min-height: 0; }
+.project-card:first-child .project-card__preview.project-card__preview--media { min-height: 0; align-self: start; }
 .project-card__preview--media::after { display: none; }
 .project-media { width: 100%; min-width: 0; max-width: 100%; }
 .project-media:not(.swiper-initialized) .swiper-wrapper { display: block; }
 .project-media .swiper-slide { margin: 0; height: auto; min-width: 0; }
-.project-media .swiper-slide img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: var(--color-bg); }
-.project-media--portrait .swiper-slide img { aspect-ratio: 3 / 4; max-height: 32rem; }
+.project-media .swiper-slide img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; padding: var(--space-xs); background: var(--color-bg-secondary); }
+.project-media--portrait .swiper-slide img { width: min(100%, 21.25rem); margin-inline: auto; aspect-ratio: 3 / 5; max-height: none; }
 .project-media figcaption { padding: var(--space-sm); font-size: .8rem; color: var(--color-text-muted); }
-.project-media__controls { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); padding: var(--space-sm); }
+.project-media__controls { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs); padding: var(--space-xs) var(--space-sm); border-top: 1px solid var(--color-border); background: var(--color-bg-secondary); }
 .project-media__controls[hidden] { display: none; }
 .project-media__controls button { min-height: 44px; padding: var(--space-xs) var(--space-sm); border: 1px solid var(--color-border); background: var(--color-bg-secondary); color: var(--color-text); cursor: pointer; }
 .project-media__controls button:disabled { color: var(--color-text-muted); cursor: default; }

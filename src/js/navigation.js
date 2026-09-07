@@ -56,6 +56,22 @@ export function initNavigation() {
   const sentinel = document.createElement('span')
   sentinel.className = 'header-sentinel'
   sentinel.setAttribute('aria-hidden', 'true')
+  const observeSections = () => {
+    if (!('IntersectionObserver' in window)) return
+    observer?.disconnect()
+    // IO percentage margins resolve against width, not viewport height.
+    // Observe the same narrow reading line that selects the active section.
+    const height = window.innerHeight
+    const line = Math.min(height - 2, Math.max(header.getBoundingClientRect().height + 16, height * .4))
+    observer = new IntersectionObserver(() => {
+      const positions = sections.filter(Boolean).map(section => ({ section, rect: section.getBoundingClientRect() }))
+      const covering = positions.find(({ rect }) => rect.top <= line + 1 && rect.bottom > line)
+      const previous = positions.filter(({ rect }) => rect.top <= line + 1).at(-1)
+      const active = covering || previous || positions[0]
+      if (active) activate(active.section.id)
+    }, { rootMargin: '-' + line + 'px 0px -' + Math.max(0, height - line - 2) + 'px 0px', threshold: 0 })
+    sections.filter(Boolean).forEach(section => observer.observe(section))
+  }
   const measure = () => document.documentElement.style.setProperty('--header-offset', (header.getBoundingClientRect().height + 16) + 'px')
 
   dispose = () => {
@@ -89,6 +105,7 @@ export function initNavigation() {
     }, { signal: listeners.signal })
     window.addEventListener('hashchange', hash, { signal: listeners.signal })
     window.addEventListener('popstate', hash, { signal: listeners.signal })
+    window.addEventListener('resize', observeSections, { signal: listeners.signal })
     mobile.addEventListener('change', resize)
     resize()
     activate('home')
@@ -99,11 +116,7 @@ export function initNavigation() {
       sizeObserver.observe(header)
     }
     if ('IntersectionObserver' in window) {
-      observer = new IntersectionObserver(() => {
-        const passed = sections.filter(section => section && section.getBoundingClientRect().top <= window.innerHeight * .3)
-        activate((passed.at(-1) || sections[0]).id)
-      }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 })
-      sections.filter(Boolean).forEach(section => observer.observe(section))
+      observeSections()
       topObserver = new IntersectionObserver(([entry]) => header.classList.toggle('is-scrolled', !entry.isIntersecting))
       topObserver.observe(sentinel)
     }

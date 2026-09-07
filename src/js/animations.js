@@ -89,7 +89,7 @@ export function initAnimations() {
         reveal('#about .container > p', { y: 12, stagger: 0 })
         reveal('.education')
         reveal('.skills-list > li', { stagger: desktop ? 0.035 : 0 })
-        reveal('.certificate-placeholder')
+        document.querySelectorAll('.certificate-card').forEach(card => reveal(card))
         reveal('#contact .container > p, #contact .contact-link', { stagger: 0.05 })
 
         if (desktop) scope.add(() => {
